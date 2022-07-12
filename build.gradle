@@ -19,4 +19,13 @@ test {
         events "PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR"
     }
     useJUnitPlatform()
+
+    options {
+        def testProps = new HashMap<Object, Object>()
+        System.getProperties()
+                .entrySet()
+                .stream()
+                .forEach( prop ->testProps.put(prop.key, prop.value))
+        systemProperties(testProps)
+    }
 }

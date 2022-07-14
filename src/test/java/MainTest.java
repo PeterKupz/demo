@@ -14,5 +14,6 @@ class MainTest {
         Properties properties = System.getProperties();
         String vale = properties.getProperty("vale");
         Assertions.assertEquals(m.plus(1, 2), Integer.parseInt(vale));
+        Assertions.assertEquals(m.plus(2, 2), 4);
     }
 }
